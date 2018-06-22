@@ -187,6 +187,14 @@
 			#gpio-cells = <2>;
 			status = "disabled";
 		};
+
+		mub:mu@4229C000 {
+			compatible = "nxp,imx-mu";
+			reg = <0x4229C000 0x4000>;
+			interrupts = <99 0>;
+			label = "MU_B";
+			status = "disabled";
+		};
 	};
 };
 

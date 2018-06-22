@@ -98,6 +98,13 @@ static void SOC_RdcInit(void)
 			RDC_DOMAIN_PERM(CONFIG_DOMAIN_ID, RDC_DOMAIN_PERM_RW),
 			false, false);
 #endif /* CONFIG_GPIO_IMX_PORT_7 */
+
+#ifdef CONFIG_IPM_IMX
+	/* Set access to MU B for M4 core */
+	RDC_SetPdapAccess(RDC, rdcPdapMuB,
+			RDC_DOMAIN_PERM(CONFIG_DOMAIN_ID, RDC_DOMAIN_PERM_RW),
+			false, false);
+#endif /* CONFIG_IPM_IMX */
 }
 
 /* Initialize cache. */
